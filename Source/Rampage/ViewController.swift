@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Engine
 
 class ViewController: UIViewController {
     
@@ -16,7 +17,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupImageView()
         
+        var bitmap = Bitmap(width: 8, height: 8, color: .white)
+        bitmap[0,0] = .blue
         
+        imageView.image = UIImage(bitmap: bitmap)
+        
+        //nearest-neighbor algorithm 
+        imageView.layer.magnificationFilter = .nearest
     }
     
     func setupImageView() {
