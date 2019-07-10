@@ -16,11 +16,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupImageView()
-        
-        var bitmap = Bitmap(width: 8, height: 8, color: .white)
-        bitmap[0,0] = .blue
-        
-        imageView.image = UIImage(bitmap: bitmap)
+        var renderer = Renderer(width: 8, height: 8)
+        renderer.draw()
+    
+        imageView.image = UIImage(bitmap: renderer.bitmap)
         
         //nearest-neighbor algorithm 
         imageView.layer.magnificationFilter = .nearest

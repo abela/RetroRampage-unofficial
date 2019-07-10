@@ -17,6 +17,7 @@
 		E632BC3322D50FCD003745C9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632BC3222D50FCD003745C9 /* Color.swift */; };
 		E632BC3522D513C6003745C9 /* Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632BC3422D513C6003745C9 /* Bitmap.swift */; };
 		E6FA693222D5E1E900B2184E /* UIImage+Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FA693122D5E1E900B2184E /* UIImage+Bitmap.swift */; };
+		E6FA693422D5E70E00B2184E /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FA693322D5E70E00B2184E /* Renderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		E632BC3222D50FCD003745C9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E632BC3422D513C6003745C9 /* Bitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitmap.swift; sourceTree = "<group>"; };
 		E6FA693122D5E1E900B2184E /* UIImage+Bitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Bitmap.swift"; sourceTree = "<group>"; };
+		E6FA693322D5E70E00B2184E /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				E632BC3122D50FBC003745C9 /* Utilities */,
 				016E41CC228E9A8600ACF137 /* Info.plist */,
+				E6FA693322D5E70E00B2184E /* Renderer.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E632BC3522D513C6003745C9 /* Bitmap.swift in Sources */,
+				E6FA693422D5E70E00B2184E /* Renderer.swift in Sources */,
 				E632BC3322D50FCD003745C9 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
