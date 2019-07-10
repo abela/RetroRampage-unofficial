@@ -14,6 +14,6 @@ Modern shooters have moved on a bit from Wolfenstein's grid-based 2.5D world, bu
 
 ### Goal
 
-At this moment this project is following to the Lockwood tutorial which is a really great engineer and programmer.
-My main goal from this project is to learn as many as possible from Lockwood and then take this project and refactor iOS-Platform-layer, crate tools for other platforms and make this game on different platforms like Mac,Linux,Windows.
+At this moment this project is following to the Lockwood tutorial which is a really great engineer and programmer. He is really doing a great job and thank you Lockwood for your great contribution.
+My main goal from this project is to learn as many as possible from Lockwood and then take this project and refactor iOS-Platform-layer, create tools for other platforms and make this game on different platforms like Mac,Linux,Windows.
 Add options feature, AI, difficulty and many other funny thing.
