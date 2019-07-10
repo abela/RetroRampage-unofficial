@@ -12,13 +12,25 @@ import Engine
 class ViewController: UIViewController {
     
     private let imageView = UIImageView()
+    private let panGesture = UIPanGestureRecognizer()
     private var world = World(map: loadMap())
     private var lastFrameTime = CACurrentMediaTime()
+    
+    private var inputVector: Vector {
+        switch panGesture.state {
+        case .began, .changed:
+            let translation = panGesture.translation(in: view)
+            return Vector(x: Double(translation.x), y: Double(translation.y))
+        default:
+            return Vector(x: 0, y: 0)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupImageView()
-     
+        view.addGestureRecognizer(panGesture)
+        
         //nearest-neighbor algorithm
         imageView.layer.magnificationFilter = .nearest
         
@@ -30,7 +42,8 @@ class ViewController: UIViewController {
     @objc func update(_ displayLink: CADisplayLink) {
         
         let timeStep = displayLink.timestamp - lastFrameTime
-        world.update(timeStep: timeStep)
+        let input = Input(velocity: inputVector)
+        world.update(timeStep: timeStep, input: input)
         lastFrameTime = displayLink.timestamp
         
         let size = Int(min(imageView.bounds.width, imageView.bounds.height))
