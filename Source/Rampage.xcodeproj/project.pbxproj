@@ -27,6 +27,7 @@
 		E688004F22D62BA300BBA249 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E688004A22D62BA300BBA249 /* Renderer.swift */; };
 		E6F46AFC22D631D2008BD503 /* Map.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E6F46AFB22D631D2008BD503 /* Map.geojson */; };
 		E6F46AFF22D6479C008BD503 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F46AFE22D6479C008BD503 /* Ray.swift */; };
+		E6F46B0122D729E7008BD503 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F46B0022D729E7008BD503 /* Rotation.swift */; };
 		E6FA693222D5E1E900B2184E /* UIImage+Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FA693122D5E1E900B2184E /* UIImage+Bitmap.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		E688004A22D62BA300BBA249 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		E6F46AFB22D631D2008BD503 /* Map.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Map.geojson; sourceTree = "<group>"; };
 		E6F46AFE22D6479C008BD503 /* Ray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
+		E6F46B0022D729E7008BD503 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		E6FA693122D5E1E900B2184E /* UIImage+Bitmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Bitmap.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +198,7 @@
 				E688004A22D62BA300BBA249 /* Renderer.swift */,
 				E688004822D62BA300BBA249 /* Vector.swift */,
 				E688004722D62BA300BBA249 /* World.swift */,
+				E6F46B0022D729E7008BD503 /* Rotation.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				E688004322D62B3A00BBA249 /* Tile.swift in Sources */,
 				E688004B22D62BA300BBA249 /* Player.swift in Sources */,
 				E688004122D62B3A00BBA249 /* Thing.swift in Sources */,
+				E6F46B0122D729E7008BD503 /* Rotation.swift in Sources */,
 				E6F46AFF22D6479C008BD503 /* Ray.swift in Sources */,
 				E688004C22D62BA300BBA249 /* World.swift in Sources */,
 				E688004D22D62BA300BBA249 /* Vector.swift in Sources */,

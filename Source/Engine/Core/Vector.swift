@@ -23,6 +23,10 @@ public extension Vector {
     var orthogonal: Vector {
         return Vector(x: -y, y: x)
     }
+    
+    func rotated(by rotation:Rotation) -> Vector {
+        return Vector(x: x * rotation.m1 + y * rotation.m2, y: x * rotation.m3 + y * rotation.m4)
+    }
 
     static func + (lhs: Vector, rhs: Vector) -> Vector {
         return Vector(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
