@@ -23,7 +23,7 @@ public extension Renderer {
         drawPlayer(world, scale)
         
         
-        drawLineOfSight(world, scale)
+        castRays(world, scale)
         
         
         
@@ -51,10 +51,38 @@ public extension Renderer {
     }
     
     
-    mutating private func drawLineOfSight(_ world:World, _ scale: Double) {
-        let ray = Ray(origin: world.player.position, direction: world.player.direction)
-        let end = world.map.hitTest(ray: ray)
-        bitmap.drawLine(from: world.player.position * scale, to: end * scale, color: .green)
+    mutating private func castRays(_ world:World, _ scale: Double) {
+    
+        // must refactor this method
+        let columns = 10
+        let viewWidth = 1.0
+        let focalLength = 1.0
+        let viewPlane = world.player.direction.orthogonal * viewWidth
+        let step = viewPlane / Double(columns)
+        let viewCenter = world.player.position + world.player.direction * focalLength
+        let viewStart = viewCenter - viewPlane / 2
+
+        var columnPosition = viewStart
+        let rayDirection = columnPosition - world.player.position
+        
+        let viewPlaneDistance = rayDirection.length
+        let ray = Ray(
+            origin: world.player.position,
+            direction: rayDirection / viewPlaneDistance
+        )
+
+
+        for _ in 0 ..< columns {
+            let rayDirection = columnPosition - world.player.position
+            let viewPlaneDistance = rayDirection.length
+            let ray = Ray(
+                origin: world.player.position,
+                direction: rayDirection / viewPlaneDistance
+            )
+            let end = world.map.hitTest(ray: ray)
+            bitmap.drawLine(from: ray.origin * scale, to: end * scale, color: .green)
+            columnPosition += step
+        }
     }
     
     mutating private func drawViewPlane(_ world:World, _ scale:Double) {
