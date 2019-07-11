@@ -22,12 +22,20 @@ private func loadMap() -> Tilemap {
     return try! JSONDecoder().decode(Tilemap.self, from: jsonData)
 }
 
+private func loadTextures() -> Textures {
+    return Textures(loader: { name in
+        Bitmap(image: UIImage(named: name)!)!
+    })
+}
+
 class ViewController: UIViewController {
     private let imageView = UIImageView()
     private let panGesture = UIPanGestureRecognizer()
     private var world = World(map: loadMap())
     private var lastFrameTime = CACurrentMediaTime()
     private var fpsLabel = UILabel()
+    private let textures = loadTextures()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +91,7 @@ class ViewController: UIViewController {
         lastFrameTime = displayLink.timestamp
         
         let width = Int(imageView.bounds.width), height = Int(imageView.bounds.height)
-        var renderer = Renderer(width: width, height: height)
+        var renderer = Renderer(width: width, height: height, textures: textures)
         renderer.draw(world)
         
         imageView.image = UIImage(bitmap: renderer.bitmap)
