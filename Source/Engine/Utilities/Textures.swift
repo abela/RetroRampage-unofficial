@@ -13,6 +13,7 @@ public enum Texture:String, CaseIterable {
     case floor
     case crackfloor
     case ceiling
+    case monster
 }
 
 public struct Textures {
@@ -27,7 +28,7 @@ public extension Textures {
         }
         self.init(textures: textures)
     }
-    
+
     subscript(_ texture: Texture) -> Bitmap {
         return textures[texture]!
     }

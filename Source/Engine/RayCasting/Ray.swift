@@ -14,4 +14,10 @@ public struct Ray {
         self.origin = origin
         self.direction = direction
     }
+    
+    var slopeIntercept: (slope: Double, intercept: Double) {
+        let slope = direction.y / direction.x
+        let intercept = origin.y - slope * origin.x
+        return (slope, intercept)
+    }
 }

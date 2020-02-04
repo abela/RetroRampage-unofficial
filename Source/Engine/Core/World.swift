@@ -35,6 +35,17 @@ public extension World {
     var size: Vector {
         return map.size
     }
+    
+    var sprites: [BillBoard] {
+        let spritePlane = player.direction.orthogonal
+        return monsters.map { monster in
+            BillBoard(
+                start: monster.position - spritePlane / 2,
+                direction: spritePlane,
+                length: 1
+            )
+        }
+    }
 
     mutating func update(timeStep: Double, input: Input) {
         
@@ -48,4 +59,6 @@ public extension World {
             player.position -= intersection
         }
     }
+    
+    
 }
